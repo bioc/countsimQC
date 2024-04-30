@@ -105,18 +105,18 @@ jobs:
           brew install fribidi
           brew install --cask xquartz
 
-      - name: Check gcc version
-        if: runner.os == 'macOS'
-        run: |
-          ls /usr/local/Cellar/gcc@12
-
-      - name: Set up gfortran symlinks (macOS)
-        if: runner.os == 'macOS'
-        run: |
-          set -x
-          sudo mkdir -p /usr/local/gfortran
-          sudo ln -s /usr/local/Cellar/gcc@12/12.3.0/lib/gcc/12 /usr/local/gfortran/lib
-          gfortran --version
+#      - name: Check gcc version
+#        if: runner.os == 'macOS'
+#        run: |
+#          ls /usr/local/Cellar
+#
+#      - name: Set up gfortran symlinks (macOS)
+#        if: runner.os == 'macOS'
+#        run: |
+#          set -x
+#          sudo mkdir -p /usr/local/gfortran
+#          sudo ln -s /usr/local/Cellar/gcc@12/12.3.0/lib/gcc/12 /usr/local/gfortran/lib
+#          gfortran --version
 
       - name: Install dependencies
         run: |
